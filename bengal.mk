@@ -357,11 +357,13 @@ PRODUCT_PACKAGES += \
     init.qcom.early_boot.sh \
     init.qcom.post_boot.sh \
     init.qcom.sh \
+    init.qcom.usb.sh \
     init.qti.dcvs.sh
 
 PRODUCT_PACKAGES += \
     init.qcom.power.rc \
     init.qcom.rc \
+    init.qcom.usb.rc \
     init.recovery.qcom.rc \
     init.target.rc \
     init.xiaomi.rc \
@@ -380,8 +382,7 @@ PRODUCT_SOONG_NAMESPACES += \
     $(LOCAL_PATH) \
     hardware/google/interfaces \
     hardware/google/pixel \
-    hardware/xiaomi \
-    vendor/qcom/opensource/usb/etc
+    hardware/xiaomi
 
 # Telephony
 PRODUCT_PACKAGES += \

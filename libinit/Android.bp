@@ -1,11 +1,11 @@
 //
-// Copyright (C) 2021 The LineageOS Project
+// Copyright (C) 2021-2025 The LineageOS Project
 //
 // SPDX-License-Identifier: Apache-2.0
 //
 
 cc_library_static {
-    name: "libinit_xiaomi_kona",
+    name: "libinit_xiaomi_bengal",
     srcs: [
         "libinit_dalvik_heap.cpp",
         "libinit_variant.cpp",
@@ -17,9 +17,9 @@ cc_library_static {
 }
 
 cc_library_static {
-    name: "init_xiaomi_kona",
-    srcs: ["init_xiaomi_kona.cpp"],
-    whole_static_libs: ["libinit_xiaomi_kona"],
+    name: "init_xiaomi_bengal",
+    srcs: ["init_xiaomi_bengal.cpp"],
+    whole_static_libs: ["libinit_xiaomi_bengal"],
     include_dirs: ["system/core/init"],
     recovery_available: true,
 }

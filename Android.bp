@@ -1,5 +1,5 @@
 //
-// Copyright (C) 2021 The LineageOS Project
+// Copyright (C) 2021-2025 The LineageOS Project
 //
 // SPDX-License-Identifier: Apache-2.0
 //
@@ -17,9 +17,9 @@ soong_namespace {
 }
 
 soong_config_module_type {
-    name: "xiaomi_kona_wifi_install_symlink",
+    name: "xiaomi_bengal_wifi_install_symlink",
     module_type: "install_symlink",
-    config_namespace: "XIAOMI_KONA",
+    config_namespace: "XIAOMI_BENGAL",
     variables: ["WIFI_SYMLINK_VERSION"],
     properties: ["symlink_target"],
 }
@@ -36,7 +36,7 @@ install_symlink {
     symlink_target: "/vendor/etc/wifi/WCNSS_qcom_cfg.ini",
 }
 
-xiaomi_kona_wifi_install_symlink {
+xiaomi_bengal_wifi_install_symlink {
     name: "firmware_wlan_mac.bin_symlink",
     vendor: true,
     installed_location: "firmware/wlan/qca_cld/wlan_mac.bin",

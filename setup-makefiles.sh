@@ -1,7 +1,7 @@
 #!/bin/bash
 #
 # SPDX-FileCopyrightText: 2016 The CyanogenMod Project
-# SPDX-FileCopyrightText: 2017-2024 The LineageOS Project
+# SPDX-FileCopyrightText: 2017-2025 The LineageOS Project
 # SPDX-License-Identifier: Apache-2.0
 #
 
@@ -24,7 +24,7 @@ source "${HELPER}"
 
 function vendor_imports() {
     cat <<EOF >>"$1"
-		"device/xiaomi/sm8250-common",
+		"device/xiaomi/sm6115-common",
 		"hardware/qcom-caf/common/libqti-perfd-client",
 		"hardware/qcom-caf/sm8250",
 		"hardware/qcom-caf/wlan",
@@ -68,16 +68,14 @@ function lib_to_package_fixup() {
 setup_vendor "${DEVICE_COMMON}" "${VENDOR_COMMON:-$VENDOR}" "${ANDROID_ROOT}" true
 
 # Warning headers and guards
-write_headers "alioth apollon cas cmi dagu elish enuma lmi munch pipa psyche thyme umi"
+write_headers "citrus lime"
 
 # The standard common blobs
 write_makefiles "${MY_DIR}/proprietary-files.txt" true
 
 # Exclude blobs from tablet builds
 printf '\n%s\n' 'ifneq ($(TARGET_IS_TABLET),true)' >> "$PRODUCTMK"
-
 write_makefiles "${MY_DIR}/proprietary-files-phone.txt" true
-
 printf '%s\n' 'endif' >> "$PRODUCTMK"
 
 # Finish

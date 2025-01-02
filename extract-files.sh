@@ -70,14 +70,6 @@ fi
 
 function blob_fixup() {
     case "${1}" in
-        system_ext/lib64/libwfdservice.so)
-            [ "$2" = "" ] && return 0
-            "${PATCHELF}" --replace-needed "android.media.audio.common.types-V2-cpp.so" "android.media.audio.common.types-V3-cpp.so" "${2}"
-            ;;
-        vendor/etc/init/init.mi_thermald.rc)
-            [ "$2" = "" ] && return 0
-            sed -i "/seclabel u:r:mi_thermald:s0/d" "${2}"
-            ;;
         vendor/lib64/libril-qc-hal-qmi.so)
             [ "$2" = "" ] && return 0
             sed -i 's|ro.product.vendor.device|ro.vendor.radio.midevice|g' "${2}"
@@ -99,7 +91,6 @@ if [ -z "${ONLY_FIRMWARE}" ] && [ -z "${ONLY_TARGET}" ]; then
     setup_vendor "${DEVICE_COMMON}" "${VENDOR_COMMON:-$VENDOR}" "${ANDROID_ROOT}" true "${CLEAN_VENDOR}"
 
     extract "${MY_DIR}/proprietary-files.txt" "${SRC}" "${KANG}" --section "${SECTION}"
-    extract "${MY_DIR}/proprietary-files-phone.txt" "${SRC}" "${KANG}" --section "${SECTION}"
 fi
 
 if [ -z "${ONLY_COMMON}" ] && [ -s "${MY_DIR}/../../${VENDOR}/${DEVICE}/proprietary-files.txt" ]; then

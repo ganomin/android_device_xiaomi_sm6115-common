@@ -192,9 +192,6 @@ PRODUCT_PACKAGES += \
     uinput-fpc.idc \
     uinput-goodix.idc
 
-# Kernel
-PRODUCT_SET_DEBUGFS_RESTRICTIONS := true
-
 # Lights
 PRODUCT_PACKAGES += \
     android.hardware.light-service.xiaomi

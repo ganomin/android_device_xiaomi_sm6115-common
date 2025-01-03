@@ -75,6 +75,7 @@ TARGET_KERNEL_SOURCE := kernel/xiaomi/sm6115
 TARGET_KERNEL_CONFIG := \
     vendor/bengal-perf_defconfig \
     vendor/debugfs.config
+TARGET_KERNEL_LLVM_BINUTILS := false
 
 # Lineage Health
 TARGET_HEALTH_CHARGING_CONTROL_SUPPORTS_BYPASS := false

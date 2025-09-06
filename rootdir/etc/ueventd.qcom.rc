@@ -415,6 +415,8 @@ firmware_directories /vendor/firmware_mnt/image/
 /sys/class/graphics/fb0     msm_cmd_autorefresh_en   0664    system  graphics
 */
 
+/sys/devices/platform/soc/ae00000.qcom,mdss_mdp power/control 0664 system graphics
+
 #asm330 sensor
 #common sensors files
 /sys/devices/platform/soc/*.i2c/i2c-*/*-*/iio:device*   buffer/enable                   0664    system  system
@@ -468,6 +470,8 @@ firmware_directories /vendor/firmware_mnt/image/
 /sys/devices/platform/soc/*.i2c/i2c-*/*-*/iio:device*   scan_elements/in_anglvel_z_en    0664    system  system
 /sys/devices/platform/soc/*.i2c/i2c-*/*-*/iio:device*   scan_elements/in_anglvel_z_index 0664    system  system
 /sys/devices/platform/soc/*.i2c/i2c-*/*-*/iio:device*   scan_elements/in_anglvel_z_type  0664    system  system
+
+/dev/silead_fp 0660 system system
 
 # standard iio temp attributes
 /sys/devices/platform/soc/*.i2c/i2c-*/*-*/iio:device*   in_temp_offset                  0664    system  system
